@@ -2,7 +2,10 @@ package com.bilgeadam.week2.lecture004;
 
 import java.util.Scanner;
 
-//4611686018427387847
+//1000000016531
+//555555571159
+//55555570789
+//1000004249
 public class Deneme {
 
 	public static void main(String[] args) {
@@ -26,6 +29,7 @@ public class Deneme {
 					prime = false;
 					break;
 				}
+
 			}
 
 			if (prime) {
@@ -39,6 +43,34 @@ public class Deneme {
 
 		System.out.println("Execution time in nanoseconds: " + timeElapsed);
 		System.out.println("Execution time in milliseconds: " + timeElapsed / 1000000);
+
+//		startTime = System.nanoTime();
+//
+//		if (n == 2) {
+//			System.out.println("Asal sayıdır");
+//		} else if (n < 2 || n % 2 == 0) {
+//			System.out.println("Asal Sayı Değildir");
+//		} else {
+//			boolean asal = true;
+//			for (long j = 3; j <= n - 1; j += 2) {
+//				if (n % j == 0) {
+//					asal = false;
+//					break;
+//				}
+//			}
+//
+//			if (asal) {
+//				System.out.println("Asaldır");
+//			} else {
+//				System.out.println("Asal Sayı Değildir");
+//			}
+//		}
+//
+//		endTime = System.nanoTime();
+//		timeElapsed = endTime - startTime;
+//
+//		System.out.println("Execution time in nanoseconds: " + timeElapsed);
+//		System.out.println("Execution time in milliseconds: " + timeElapsed / 1000000);
 
 	}
 
