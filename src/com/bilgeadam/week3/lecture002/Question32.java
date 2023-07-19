@@ -25,7 +25,7 @@ public class Question32 {
 
 		for (int i = 0; i < ulkeler.length; i++) {
 			if (ulkeler[i].equalsIgnoreCase(ulke)) {
-				System.out.println("Girdiğiniz ülke dizimizde bulunmaktadır. ");
+//				System.out.println("Girdiğiniz ülke dizimizde bulunmaktadır. ");
 				kontrol = true;
 				break;
 			}
@@ -33,7 +33,9 @@ public class Question32 {
 //				System.err.println("Girdiğiniz ülke dizimizde bulunmamaktadır. ");
 //			}
 		}
-		if (!kontrol) {
+		if (kontrol) {
+			System.out.println("Girdiğiniz ülke dizimizde bulunmaktadır. ");
+		} else {
 			System.err.println("Girdiğiniz ülke dizimizde bulunmamaktadır. ");
 		}
 		scanner.close();
