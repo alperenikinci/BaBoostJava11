@@ -17,11 +17,11 @@ public class Question31 {
 		booleanArray[booleanArray.length - 1] = 1 > 10;
 		System.out.println(booleanArray[booleanArray.length - 1]);
 
-		boolean[] booleanArray2 = { 'a' == 'a', true, false };
+		boolean[] booleanArray2 = { 'a' == 'b', true, false };
 		System.out.println(booleanArray2[0]);
 
 		System.out.println(booleanArray2.length);
-		// System.out.println(booleanArray2[3]); //
+		System.out.println(booleanArray2[3]); //
 		// java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for
 		// length 3
 
