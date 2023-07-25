@@ -17,7 +17,6 @@ public class SayiKontrol {
 			if (!Character.isDigit(c)) {
 				return false;
 			}
-
 		}
 
 		return true;
