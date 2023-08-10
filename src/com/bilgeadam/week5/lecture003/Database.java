@@ -40,6 +40,5 @@ public class Database {
 		kullanici3.id = uzunluk;
 		kullaniciListesi[2] = kullanici3;
 		uzunluk++;
-
 	}
 }

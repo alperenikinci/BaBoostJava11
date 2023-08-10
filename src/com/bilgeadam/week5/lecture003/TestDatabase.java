@@ -4,9 +4,10 @@ public class TestDatabase {
 
 	public static void main(String[] args) {
 
-		Database database = new Database();
-		database.kullanicilariOlustur();
-		Kullanici[] kullanicilar = database.kullaniciListesi;
+//		Database database = new Database();
+//		database.kullanicilariOlustur();
+		Database.kullanicilariOlustur();
+		Kullanici[] kullanicilar = Database.kullaniciListesi;
 		for (int i = 0; i < kullanicilar.length; i++) {
 			if (kullanicilar[i] != null) {
 				System.out.println(kullanicilar[i].isim + " " + kullanicilar[i].id);
