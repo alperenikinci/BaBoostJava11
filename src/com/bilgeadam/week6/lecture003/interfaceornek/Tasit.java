@@ -11,7 +11,6 @@ public class Tasit implements IHareket {
 	@Override
 	public void dur() {
 		System.out.println("Tasit durdu.");
-
 	}
 
 }

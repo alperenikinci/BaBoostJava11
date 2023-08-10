@@ -6,9 +6,17 @@ public class Test {
 		Araba araba = new Araba();
 
 		araba.ilerle();
+		System.out.println();
 
 		Bisiklet bisiklet = new Bisiklet();
+		bisiklet.bin();
 		bisiklet.ilerle();
+
+		System.out.println();
+		Ucak ucak = new Ucak();
+		ucak.ilerle();
+		ucak.uc();
+
 	}
 
 }
