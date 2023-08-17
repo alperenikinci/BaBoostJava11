@@ -2,7 +2,7 @@ package com.bilgeadam.week07.lecture003.footballapp;
 
 import java.util.Random;
 
-public class Ortasaha extends Futbolcu {
+public class Ortasaha extends AktifFutbolcu {
 
 	private int uzunTop;
 	private int ilkDokunus;
@@ -73,6 +73,26 @@ public class Ortasaha extends Futbolcu {
 				+ ", getHiz()=" + getHiz() + ", getPas()=" + getPas() + ", getSut()=" + getSut() + ", getYetenek()="
 				+ getYetenek() + ", getKararlilik()=" + getKararlilik() + ", getDogalForm()=" + getDogalForm()
 				+ ", getSans()=" + getSans() + "]";
+	}
+
+	@Override
+	public int pasSkor() {
+
+		Random random = new Random();
+		int bonus = random.nextInt(1, 9);
+
+		return (int) (getPas() * 0.2 + getYetenek() * 0.2 + getOzelYetenek() * 0.2 + getDayaniklilik() * 0.1
+				+ getDogalForm() * 0.1 + getSans() * 0.1 + bonus);
+	}
+
+	@Override
+	public int golSkoru(int kurtaris) {
+
+		Random random = new Random();
+
+		int bonus = (int) (random.nextInt(1, 7) * getDogalForm() * 0.075);
+		return (int) (getYetenek() * 0.2 + getOzelYetenek() * 0.2 + getSut() * 0.2 + getIlkDokunus() * 0.1
+				+ getKararlilik() * 0.1 + getSans() * 0.1 + getDogalForm() * 0.1 + bonus - kurtaris);
 	}
 
 }

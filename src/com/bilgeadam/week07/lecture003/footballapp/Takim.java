@@ -6,7 +6,7 @@ import java.util.List;
 public class Takim implements ITakim {
 
 	private String ad;
-	List<Futbolcu> futbolcular;
+	List<AktifFutbolcu> futbolcular;
 	private Kaleci kaleci;
 
 	public Takim(String ad) {
@@ -16,6 +16,7 @@ public class Takim implements ITakim {
 		defansOlustur();
 		ortasahaOlustur();
 		forvetOlustur();
+
 	}
 
 	public String getAd() {
@@ -26,11 +27,11 @@ public class Takim implements ITakim {
 		this.ad = ad;
 	}
 
-	public List<Futbolcu> getFutbolcular() {
+	public List<AktifFutbolcu> getFutbolcular() {
 		return futbolcular;
 	}
 
-	public void setFutbolcular(List<Futbolcu> futbolcular) {
+	public void setFutbolcular(List<AktifFutbolcu> futbolcular) {
 		this.futbolcular = futbolcular;
 	}
 
