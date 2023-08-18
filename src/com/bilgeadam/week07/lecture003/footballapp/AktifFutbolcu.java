@@ -14,13 +14,12 @@ public abstract class AktifFutbolcu extends Futbolcu {
 		int pasSkoru = pasSkor();
 
 		if (pasSkoru > 68) {
-			System.out.println("Pas basarili!!!");
-			System.out.println("pasSkoru = " + pasSkoru);
+//			System.out.println("Pas basarili!!!");
+//			System.out.println("pasSkoru = " + pasSkoru);
 			return true;
 		} else {
-			System.out.println("Pas basarisiz!!!");
-			System.out.println("pasSkoru = " + pasSkoru);
-
+//			System.out.println("Pas basarisiz!!!");
+//			System.out.println("pasSkoru = " + pasSkoru);
 			return false;
 		}
 
@@ -32,12 +31,12 @@ public abstract class AktifFutbolcu extends Futbolcu {
 		int sutSkoru = golSkoru(kurtaris);
 
 		if (sutSkoru > 68) {
-			System.out.println("GOL!!!!!");
-			System.out.println("sutSkoru = " + sutSkoru);
+
+//			System.out.println("sutSkoru = " + sutSkoru);
 			return true;
 		} else {
-			System.out.println("Kurtarıldı!!!");
-			System.out.println("sutSkoru = " + sutSkoru);
+
+//			System.out.println("sutSkoru = " + sutSkoru);
 
 			return false;
 		}
