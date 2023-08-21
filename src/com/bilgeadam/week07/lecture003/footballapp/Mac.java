@@ -31,8 +31,11 @@ public class Mac {
 		System.out.println(takim.getAd() + " maca basliyor...");
 
 		while (sure > System.currentTimeMillis()) {
-			oyna(takim);
-			takim = takimDegistir(takim);
+
+			// oyna(takim);
+//			takim = takimDegistir(takim);
+			AktifFutbolcu futbolcu = oyna(takim);
+			takim = golVurusu(futbolcu);
 
 			System.out.println((sure - System.currentTimeMillis()) / 1000 + " saniye kaldi...");
 		}
@@ -41,7 +44,7 @@ public class Mac {
 		skorGoster();
 	}
 
-	public void oyna(Takim takim) throws InterruptedException {
+	public AktifFutbolcu oyna(Takim takim) throws InterruptedException {
 
 		int pasiVerecekOyuncu = pasKontrol(12);
 
@@ -67,8 +70,10 @@ public class Mac {
 				i = -1;
 				Thread.sleep(1500);
 			}
+
 		}
-		golVurusu(takim.getFutbolcular().get(pasiVerecekOyuncu), takim);
+//		golVurusu(takim.getFutbolcular().get(pasiVerecekOyuncu), takim);
+		return takim.getFutbolcular().get(pasiVerecekOyuncu);
 	}
 
 	public Takim takimDegistir(Takim takim) throws InterruptedException {
@@ -107,7 +112,9 @@ public class Mac {
 		return oyuncuIndex;
 	}
 
-	public void golVurusu(AktifFutbolcu futbolcu, Takim takim) throws InterruptedException {
+	public Takim golVurusu(AktifFutbolcu futbolcu) throws InterruptedException {
+//		Kaleci kaleci = takimDegistir(takim).getKaleci();
+		Takim takim = futbolcuTakiminiBul(futbolcu);
 		Kaleci kaleci = takimDegistir(takim).getKaleci();
 		System.out.println("SUUUUUT..!!!");
 		System.out.println("Kaleci topa uzaniyor...");
@@ -123,6 +130,16 @@ public class Mac {
 			System.out.println(takim.getAd() + " adli takimdan " + futbolcu.getFormaNumarasi()
 					+ " nolu futbolcu golu kacirdi...!!! ");
 		}
+		return takimDegistir(takim);
+	}
+
+	public Takim futbolcuTakiminiBul(AktifFutbolcu futbolcu) {
+		for (int i = 0; i < takimlar.get(0).getFutbolcular().size(); i++) {
+			if (futbolcu.equals(takimlar.get(0).getFutbolcular().get(i))) {
+				return takimlar.get(0);
+			}
+		}
+		return takimlar.get(1);
 	}
 
 	public void skorGoster() {
