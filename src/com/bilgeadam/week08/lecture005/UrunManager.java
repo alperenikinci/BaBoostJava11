@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class UrunManager {
 
@@ -70,6 +71,16 @@ public class UrunManager {
 			return y;
 		}).forEach(System.out::println);
 		;
+	}
+
+	public void fiyatOrtalamasi(List<Urun> urunler) {
+		double ort = urunler.stream().collect(Collectors.averagingDouble(Urun::getFiyat)); // 1.yontem
+		System.out.println("Urunlerin fiyat ortalamasi : " + ort);
+
+		// double ort2 =
+		// urunler.stream().mapToDouble(Urun::getFiyat).average().orElse(0.0);
+		urunler.stream().mapToDouble(Urun::getFiyat).average().ifPresent(System.out::println);
+
 	}
 
 }

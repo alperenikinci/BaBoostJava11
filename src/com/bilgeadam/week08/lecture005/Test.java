@@ -44,6 +44,9 @@ public class Test {
 		System.out.println();
 
 		urunManager.zamYap(urunManager.urunler);
+
+		urunManager.fiyatOrtalamasi(urunManager.urunler);
+
 	}
 
 }
