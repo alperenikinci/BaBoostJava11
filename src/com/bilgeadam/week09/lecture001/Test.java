@@ -6,7 +6,12 @@ public class Test {
 
 		StudentManager studentManager = new StudentManager();
 		studentManager.ortalamaHesaplama();
-
+		System.out.println();
+		studentManager.bolumeGoreMaple();
+		System.out.println();
+		studentManager.ogrenciVeNotOrtMaple();
+		System.out.println();
+		studentManager.durumuGuncelle();
 	}
 
 }
