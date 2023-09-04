@@ -37,7 +37,7 @@ public class TryCatchOrnek2 {
 //		} catch (NullKontrolException e) {
 //			e.printStackTrace();
 //		}
-
+		Utility.intDegerAlma("Lutfen bir sayi giriniz : ");
 	}
 
 	private static void toplam(String[] array) {

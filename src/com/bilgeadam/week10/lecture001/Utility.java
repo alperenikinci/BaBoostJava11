@@ -1,4 +1,4 @@
-package com.bilgeadam.week09.lecture005;
+package com.bilgeadam.week10.lecture001;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
