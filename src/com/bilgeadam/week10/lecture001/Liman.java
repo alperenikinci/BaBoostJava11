@@ -2,7 +2,7 @@ package com.bilgeadam.week10.lecture001;
 
 public class Liman {
 
-	private Yuk[] yukler;
+	private Yuk[] yukler; // null
 //	private String isim;
 
 	public Liman() {

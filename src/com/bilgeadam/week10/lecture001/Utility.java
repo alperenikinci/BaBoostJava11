@@ -34,6 +34,23 @@ public class Utility {
 
 	}
 
+	public static double doubleDegerAlma(String sorgu) {
+		double sayi = 0;
+		boolean kontrol = false;
+
+		do {
+			try {
+				System.out.print(sorgu);
+				sayi = Double.parseDouble(scanner.nextLine());
+				kontrol = false;
+			} catch (NumberFormatException e) {
+				System.out.println("Girdiginiz deger hatalidir lutfen bir tamsayi degeri giriniz...");
+				kontrol = true;
+			}
+		} while (kontrol);
+		return sayi;
+	}
+
 	public static int randomSayiUret(int baslangic, int bitis) {
 		Random random = new Random();
 		return random.nextInt(baslangic, bitis);
