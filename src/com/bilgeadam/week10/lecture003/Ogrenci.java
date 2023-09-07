@@ -1,6 +1,8 @@
 package com.bilgeadam.week10.lecture003;
 
-public class Ogrenci {
+import java.io.Serializable;
+
+public class Ogrenci implements Serializable {
 
 	private String name;
 	private double ort;

@@ -2,7 +2,12 @@ package com.bilgeadam.week10.lecture003;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -30,6 +35,10 @@ public class Manager {
 
 		Manager manager = new Manager();
 		manager.dosyadanVeriOkuma2();
+		manager.dosyayaOgrenciYaz();
+		manager.dosyadanOgrenciOku();
+//		manager.dosyayaOgrenciYaz2();
+//		manager.dosyadanOgrenciOku2();
 	}
 
 	public void dosyadanVeriOkuma() {
@@ -87,4 +96,68 @@ public class Manager {
 				.collect(Collectors.averagingDouble(x -> Double.parseDouble(x)));
 	}
 
+	private void dosyayaOgrenciYaz() {
+		try {
+			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(
+					"C:/Users/busin/Desktop/BoostJava11/Eclipse Workspace/BilgeAdamBoostJava11/ogrenciseri.txt"));
+			ogrenciler.forEach((ogrenci) -> {
+				try {
+					oos.writeObject(ogrenci);
+					System.out.println(ogrenci.getName() + " isimli ogrenci ogrenciseri.txt'ye kaydedildi...");
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			});
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	private void dosyayaOgrenciYaz2() {
+		File file = new File(
+				"C:/Users/busin/Desktop/BoostJava11/Eclipse Workspace/BilgeAdamBoostJava11/ogrenciseri.txt");
+//		file.createNewFile();
+		try {
+			FileOutputStream fos = new FileOutputStream(file);
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+			try {
+				oos.writeObject(ogrenciler);
+				System.out.println("Ogrenciler " + file.getName() + " dosyasina kaydedildi. " + file.getAbsolutePath());
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	private void dosyadanOgrenciOku() {
+		File file = new File(
+				"C:/Users/busin/Desktop/BoostJava11/Eclipse Workspace/BilgeAdamBoostJava11/ogrenciseri.txt");
+		try {
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
+			Ogrenci ogrenci;
+
+			while ((ogrenci = (Ogrenci) ois.readObject()) != null) {
+				System.out.println(ogrenci);
+			}
+
+		} catch (Exception e) {
+			System.out.println("Dosya sonuna ulasildi...");
+		}
+	}
+
+	private void dosyadanOgrenciOku2() {
+		File file = new File(
+				"C:/Users/busin/Desktop/BoostJava11/Eclipse Workspace/BilgeAdamBoostJava11/ogrenciseri.txt");
+		try {
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
+			List<Ogrenci> ogrencilerOis = (List<Ogrenci>) ois.readObject();
+			ogrencilerOis.forEach(ogrenci -> System.out.println(ogrenci));
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
