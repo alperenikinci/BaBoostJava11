@@ -2,6 +2,7 @@ package com.bilgeadam.week10.lecture003;
 
 import java.io.BufferedReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -15,6 +16,11 @@ import java.util.stream.Collectors;
  * ogretmeninismi ->>> 2. ogrencinin notlarini okudu;
  * 
  * OgretmenTest'de 2 adet ogretmen olusturalim ve threadleri calistiralim.
+ * 
+ * Ogretmenler ayni dosya uzerinde okuma yapip okuduklari veriyi kendi siniflari icerisindeki ogrenci listesine ekleyecekler. 
+ * Bunu da bir thread yapisi ile gerceklestirecegiz.
+ * OgretmenTest'de 2 adet ogretmenimiz olacak. Bunlari thread olacak calistiracagiz. 
+ * Hangi ogretmenin kac tane ogrencinin notunu okudugunu yazdiracagiz.
  * 
  */
 
@@ -32,13 +38,22 @@ public class Ogretmen extends Thread {
 
 	@Override
 	public void run() {
-		for (int i = 0; i < 10; i++) {
-			System.out.println(name + " hoca " + (i + 1) + ". ogrencinin sinavlarini okudu.");
-			try {
-				sleep(1000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
+		try {
+			String line;
+			while ((line = bufferedReader.readLine()) != null) {
+				String[] array = line.split(","); // {Alperen,100,100,100}
+				double ort = ortHesapla(Arrays.asList(array));
+				Ogrenci ogrenci = new Ogrenci(array[0], ort);
+				ogrenciler.add(ogrenci);
+				System.out.println(name + " ===> " + ogrenci.getName() + " adli ogrenciyi ekledi...");
+				try {
+					sleep(1000);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
