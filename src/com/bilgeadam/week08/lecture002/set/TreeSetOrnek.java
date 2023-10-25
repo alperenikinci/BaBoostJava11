@@ -2,6 +2,7 @@ package com.bilgeadam.week08.lecture002.set;
 
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
@@ -43,7 +44,7 @@ public class TreeSetOrnek {
 		ogrenciSet.add(new Ogrenci(13, "Zeynep"));
 		ogrenciSet.add(new Ogrenci(53, "Banu"));
 		ogrenciSet.add(new Ogrenci(40, "Nilsel"));
-
+		
 		ogrenciSet.forEach(System.out::println);
 
 	}

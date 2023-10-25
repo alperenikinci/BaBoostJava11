@@ -24,7 +24,7 @@ public class Durak {
 	}
 
 	public void taksiOlustur() {
-		for (int i = 1; i < 14; i++) {
+		for (int i = 1; i < 11; i++) {
 			taksiler.add(new Taksi(i));
 		}
 	}
